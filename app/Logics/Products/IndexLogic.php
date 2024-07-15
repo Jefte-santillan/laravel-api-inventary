@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logics\Identities;
+namespace App\Logics\Products;
 
 use App\Flow\Logics\ModelQuery\IndexLogic as Logic;
 
@@ -13,8 +13,8 @@ class IndexLogic
     public function run($input)
     {
         $queryData = [
-            'model' => 'App\\Models\\Identities',
-            'select' => ['identities.*'],
+            'model' => 'App\\Models\\Products',
+            'select' => ['products.*'],
             'page' => $input['page'] ?? 1,
             'limit' => $input['limit'] ?? 15,
 
@@ -23,7 +23,6 @@ class IndexLogic
             $queryData['value'] = $input['query'];
             $queryData['scope'] = 'search';
         }
-
         return $this->logic->run($queryData);
     }
 }
