@@ -16,13 +16,13 @@ class TypeOperationsSeeder extends Seeder
     public function run()
     {
         TypeOperations::firstOrCreate([
-            'name' => 'in',
+            'key' => 'in',
         ], [
             'description' => 'Entrada',
         ]);
 
         TypeOperations::firstOrCreate([
-            'name' => 'out',
+            'key' => 'out',
         ], [
             'description' => 'Salida',
         ]);

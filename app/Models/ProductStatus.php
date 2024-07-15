@@ -4,15 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Kernel\Models\SoftDeletesUnix;
 
-class TypeOperations extends Model
+class ProductStatus extends Model
 {
-    const IN_KEY = 'in';
-    const OUT_KEY = 'out';
-
-    protected $fillable = ['key', 'description'];
-
+    use HasFactory;
+    const STATUS_ACTIVE = 'active';
     public $timestamps = false;
+    protected $table = 'product_status';
+    protected $fillable = [
+        'key',
+        'description',
+    ];
 
     public function getByKey(string $key)
     {
